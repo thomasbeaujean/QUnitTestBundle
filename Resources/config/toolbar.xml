@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <parameters>
+        <parameter key="q_unit_test.test_toolbar.class">thomasbeaujean\QUnitTestBundle\EventListener\QUnitToolbarListener</parameter>
+    </parameters>
+    <services>
+        <service id="q_unit_test.test_toolbar" class="%q_unit_test.test_toolbar.class%">
+            <tag name="kernel.event_subscriber" />
+            <argument type="service" id="twig" />
+            <argument>%q_unit_test.enable%</argument>
+            <argument>%q_unit_test.test_files%</argument>
+        </service>
+    </services>
+</container>

@@ -1,0 +1,11 @@
+{% stylesheets '@QUnitTestBundle/Resources/public/css/*' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+{% endstylesheets %}
+
+{% javascripts '@QUnitTestBundle/Resources/public/js/*' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+
+{% for file in filesTest %}
+    <script type="text/javascript" src="{{ file }}"></script>
+{% endfor %}
